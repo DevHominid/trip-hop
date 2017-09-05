@@ -21,7 +21,9 @@ const divStyle = {
 
 const headerStyle = {
   marginLeft: '5%',
-  marginBottom: '7px'
+  marginBottom: '7px',
+  fontFamily: 'Maven Pro, sans-serif',
+  fontWeight: 'normal'
 }
 
 const rowStyle = {

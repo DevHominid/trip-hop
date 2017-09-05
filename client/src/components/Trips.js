@@ -5,7 +5,7 @@ import Trip from './Trip';
 
 const Trips = () => (
   <div>
-    <h2>This is trips page!</h2>
+    <h2>Trips page</h2>
     <Switch>
       <Route exact path='/trips' component={AllTrips}/>
       <Route path='/trips/:number' component={Trip}/>
