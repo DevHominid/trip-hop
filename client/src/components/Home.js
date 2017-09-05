@@ -36,8 +36,8 @@ const rowStyle = {
 }
 
 const imgStyle = {
-  width: '200px',
-  height: '175px'
+  width: '175px',
+  height: '125px'
 }
 
 const Home = () => (
