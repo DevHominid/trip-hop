@@ -5,13 +5,13 @@ import Background from '../images/index-cover.jpg';
 
 const Home = () => (
   <div>
-    <div style={styles.cover}>
+    <section style={styles.cover}>
       <div style={styles.headingBlock}>
-        <h1>Lorem Ipsum</h1>
-        <h2>Cras viverra quam non viverra.</h2>
+        <h1>Take a Trip.</h1>
+        <h2 style={styles.headingMain}>{"We'd love to hear about it"}.</h2>
       </div>
-    </div>
-    <div>
+    </section>
+    <section>
       <div style={styles.divBlock}>
         <h2 style={styles.heading}>Recent Trips</h2>
         <div style={styles.row}>
@@ -23,7 +23,7 @@ const Home = () => (
             ))
           }
         </div>
-        <h2 style={styles.heading}>Future Trips</h2>
+        <h2 style={styles.heading}>Upcoming Trips</h2>
         <div style={styles.row}>
           {
             TripAPI.getFuture().map(t => (
@@ -34,7 +34,7 @@ const Home = () => (
           }
         </div>
       </div>
-    </div>
+    </section>
   </div>
 );
 
@@ -42,7 +42,7 @@ const styles = {
   cover: {
     width: '100vw',
     height: '90vh',
-    backgroundImage: "url(" + Background + ")",
+    background: "linear-gradient(0deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(" + Background + ")",
     backgroundSize: 'cover',
     display: 'flex',
     alignItems: 'center',
@@ -50,31 +50,37 @@ const styles = {
   headingBlock: {
     marginLeft: '10%',
     fontFamily: 'Maven Pro, sans-serif',
-    fontSize: '2rem',
-    color: '#0A0908'
+    fontSize: '2.5rem',
+    color: '#0A0908',
+  },
+  headingMain: {
+    fontWeight: 'normal',
+    fontSize: '2.5rem'
   },
   divBlock: {
-    width: '60%',
-    background: 'rgba(216, 216, 216, 1.0)',
+    width: '80%',
     paddingBottom: '20px',
-  },
-  heading: {
-    marginLeft: '5%',
-    marginBottom: '7px',
-    fontFamily: 'Maven Pro, sans-serif',
-    fontWeight: 'normal'
-  },
-  row: {
-    width: '90%',
     marginLeft: 'auto',
     marginRight: 'auto',
+    textAlign: 'center'
+  },
+  heading: {
+    display: 'inline-block',
+    padding: '15px 10px',
+    marginBottom: '30px',
+    marginTop: '50px',
+    fontFamily: 'Maven Pro, sans-serif',
+    fontWeight: 'normal',
+    border: '1px solid #0A0908'
+  },
+  row: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
   img: {
-    width: '175px',
-    height: '125px'
+    width: '200px',
+    height: '150px'
   }
 }
 
