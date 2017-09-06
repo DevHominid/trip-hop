@@ -8,7 +8,7 @@ const Home = () => (
     <section style={styles.cover}>
       <div style={styles.headingBlock}>
         <h1>Take a Trip.</h1>
-        <h2 style={styles.headingMain}>{"We'd love to hear about it"}.</h2>
+        <h2 style={styles.headingMain}>Share it when you get back.</h2>
       </div>
     </section>
     <section>
@@ -16,8 +16,8 @@ const Home = () => (
         <h2 style={styles.heading}>Recent Trips</h2>
         <div style={styles.row}>
           {
-            TripAPI.getRecent().map(t => (
-              <Link to={`/trips/previous/${t.number}`} key={t.number}>
+            TripAPI.getMostRecent().map(t => (
+              <Link to={`/trips/${t.status}/${t.number}`} key={t.number}>
                 <img src={t.img} alt='trip' style={styles.img} />
               </Link>
             ))
@@ -26,8 +26,8 @@ const Home = () => (
         <h2 style={styles.heading}>Upcoming Trips</h2>
         <div style={styles.row}>
           {
-            TripAPI.getFuture().map(t => (
-              <Link to={`/trips/future/${t.number}`} key={t.number}>
+            TripAPI.getMostRecentFuture().map(t => (
+              <Link to={`/trips/${t.status}/${t.number}`} key={t.number}>
                 <img src={t.img} alt='trip' style={styles.img} />
               </Link>
             ))
@@ -62,13 +62,12 @@ const styles = {
     paddingBottom: '20px',
     marginLeft: 'auto',
     marginRight: 'auto',
-    textAlign: 'center'
   },
   heading: {
-    display: 'inline-block',
+    width: '50%',
+    textAlign: 'center',
     padding: '15px 10px',
-    marginBottom: '30px',
-    marginTop: '50px',
+    margin: '50px auto 30px auto',
     fontFamily: 'Maven Pro, sans-serif',
     fontWeight: 'normal',
     border: '1px solid #0A0908'
