@@ -14,7 +14,7 @@ const Trip = (props) => {
     <div>
       <h1>{trip.title}</h1>
       <h2>{trip.date}</h2>
-      <img src={trip.img} alt='trip image'/>
+      <img src={trip.img} alt='trip'/>
       <h4>{trip.location}</h4>
       <h4>{trip.type}</h4>
       <p>{trip.notes}</p>
