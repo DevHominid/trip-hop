@@ -1,9 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import AllFutureTrips from './AllFutureTrips';
+import Trip from './Trip';
 
 const FutureTrips = () => (
   <div>
-    <h1>Future Trips</h1>
+    <Switch>
+      <Route exact path='/trips/future' component={AllFutureTrips}/>
+      <Route path='/trips/future/:number' component={Trip}/>
+    </Switch>
   </div>
 );
 

@@ -18,7 +18,7 @@ const Trip = (props) => {
       <h4>{trip.location}</h4>
       <h4>{trip.type}</h4>
       <p>{trip.notes}</p>
-      <Link to='/trips/previous'>Back</Link>
+      <Link to={`/trips/${trip.status}`}>Back</Link>
     </div>
   )
 };

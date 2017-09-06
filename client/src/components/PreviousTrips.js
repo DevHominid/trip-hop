@@ -5,11 +5,10 @@ import Trip from './Trip';
 
 const PreviousTrips = () => (
   <div>
-  <Switch>
-    <Route exact path='/trips/previous' component={AllPreviousTrips}/>
-    <Route path='/trips/previous/:number' component={Trip}/>
-  </Switch>
-
+    <Switch>
+      <Route exact path='/trips/previous' component={AllPreviousTrips}/>
+      <Route path='/trips/previous/:number' component={Trip}/>
+    </Switch>
   </div>
 );
 
