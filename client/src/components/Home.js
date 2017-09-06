@@ -17,7 +17,7 @@ const Home = () => (
         <div style={styles.row}>
           {
             TripAPI.getRecent().map(t => (
-              <Link to={`/trips/${t.number}`} key={t.number}>
+              <Link to={`/trips/previous/${t.number}`} key={t.number}>
                 <img src={t.img} alt='trip' style={styles.img} />
               </Link>
             ))
@@ -27,7 +27,7 @@ const Home = () => (
         <div style={styles.row}>
           {
             TripAPI.getFuture().map(t => (
-              <Link to={`/trips/${t.number}`} key={t.number}>
+              <Link to={`/trips/future/${t.number}`} key={t.number}>
                 <img src={t.img} alt='trip' style={styles.img} />
               </Link>
             ))
