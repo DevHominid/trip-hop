@@ -59,7 +59,67 @@ const TripAPI = {
       location: "Moraine Lake",
       img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Moraine_Lake_Alberta_Canada.jpg/250px-Moraine_Lake_Alberta_Canada.jpg",
       notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra quam non viverra tempor. Mauris sed euismod risus. Integer a commodo elit. Vestibulum aliquam magna fermentum ligula semper lacinia. Ut faucibus leo ut nisi tempor, hendrerit elementum sem tristique. Mauris metus elit, vehicula vel condimentum ultrices, tincidunt et turpis. Cras auctor dapibus nulla."
-    }
+    },
+    {
+      number: 7,
+      title: "Trip Number Seven",
+      date: "6/1/2016",
+      status: "previous",
+      type: "mountaineering",
+      location: "Mt. Holy Cross",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Mount_of_the_Holy_Cross%2C_Colorado%2C_1900.jpg/300px-Mount_of_the_Holy_Cross%2C_Colorado%2C_1900.jpg",
+      notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra quam non viverra tempor. Mauris sed euismod risus. Integer a commodo elit. Vestibulum aliquam magna fermentum ligula semper lacinia. Ut faucibus leo ut nisi tempor, hendrerit elementum sem tristique. Mauris metus elit, vehicula vel condimentum ultrices, tincidunt et turpis. Cras auctor dapibus nulla."
+    },
+    {
+      number: 8,
+      title: "Trip Number Eight",
+      date: "6/3/2017",
+      status: "previous",
+      type: "mountaineering",
+      location: "La Plata Peak",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/2007-06-24-plata-eve-close2.jpg/280px-2007-06-24-plata-eve-close2.jpg",
+      notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra quam non viverra tempor. Mauris sed euismod risus. Integer a commodo elit. Vestibulum aliquam magna fermentum ligula semper lacinia. Ut faucibus leo ut nisi tempor, hendrerit elementum sem tristique. Mauris metus elit, vehicula vel condimentum ultrices, tincidunt et turpis. Cras auctor dapibus nulla."
+    },
+    {
+      number: 9,
+      title: "Trip Number Nine",
+      date: "7/1/2017",
+      status: "previous",
+      type: "camping",
+      location: "Great Sand Dunes National Park",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Coloradodunes.jpg/300px-Coloradodunes.jpg",
+      notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra quam non viverra tempor. Mauris sed euismod risus. Integer a commodo elit. Vestibulum aliquam magna fermentum ligula semper lacinia. Ut faucibus leo ut nisi tempor, hendrerit elementum sem tristique. Mauris metus elit, vehicula vel condimentum ultrices, tincidunt et turpis. Cras auctor dapibus nulla."
+    },
+    {
+      number: 10,
+      title: "Trip Number Ten",
+      date: "7/8/2017",
+      status: "future",
+      type: "mountaineering",
+      location: "Longs Peak",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fall05-LongsPeakCU_JPG_RSZ_md.jpg/280px-Fall05-LongsPeakCU_JPG_RSZ_md.jpg",
+      notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra quam non viverra tempor. Mauris sed euismod risus. Integer a commodo elit. Vestibulum aliquam magna fermentum ligula semper lacinia. Ut faucibus leo ut nisi tempor, hendrerit elementum sem tristique. Mauris metus elit, vehicula vel condimentum ultrices, tincidunt et turpis. Cras auctor dapibus nulla."
+    },
+    {
+      number: 11,
+      title: "Trip Number Eleven",
+      date: "8/1/2017",
+      status: "future",
+      type: "hiking",
+      location: "Banff National Park",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Moraine_Lake_17092005.jpg/300px-Moraine_Lake_17092005.jpg",
+      notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra quam non viverra tempor. Mauris sed euismod risus. Integer a commodo elit. Vestibulum aliquam magna fermentum ligula semper lacinia. Ut faucibus leo ut nisi tempor, hendrerit elementum sem tristique. Mauris metus elit, vehicula vel condimentum ultrices, tincidunt et turpis. Cras auctor dapibus nulla."
+    },
+    {
+      number: 12,
+      title: "Trip Number Twelve",
+      date: "8/8/2017",
+      status: "future",
+      type: "camping",
+      location: "Moraine Lake",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Moraine_Lake_Alberta_Canada.jpg/250px-Moraine_Lake_Alberta_Canada.jpg",
+      notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra quam non viverra tempor. Mauris sed euismod risus. Integer a commodo elit. Vestibulum aliquam magna fermentum ligula semper lacinia. Ut faucibus leo ut nisi tempor, hendrerit elementum sem tristique. Mauris metus elit, vehicula vel condimentum ultrices, tincidunt et turpis. Cras auctor dapibus nulla."
+    },
   ],
   all: function() { return this.trips },
   get: function(id) {
@@ -70,10 +130,20 @@ const TripAPI = {
     const recent = this.trips.filter(trip => trip.status === 'previous');
     return recent;
   },
+  getMostRecent: function() {
+    const recent = this.trips.filter(trip => trip.status === 'previous');
+    const mostRecent = recent.slice(-3);
+    return mostRecent;
+  },
   getFuture: function() {
     const future = this.trips.filter(trip => trip.status === 'future');
     return future;
-  }
+  },
+  getMostRecentFuture: function() {
+    const recent = this.trips.filter(trip => trip.status === 'future');
+    const mostRecent = recent.slice(-3);
+    return mostRecent;
+  },
 }
 
 export default TripAPI;
