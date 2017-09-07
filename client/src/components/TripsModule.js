@@ -2,29 +2,14 @@ import React from 'react';
 import TripAPI from '../TripAPI';
 import { Link } from 'react-router-dom';
 import Background from '../images/topo-map2.png';
+import TripRow from './TripRow';
 
 const TripsModule = () => (
   <div style={styles.divBlock}>
     <h2 style={styles.heading}>Recent Trips</h2>
-    <div style={styles.row}>
-      {
-        TripAPI.getMostRecent().map(t => (
-          <Link to={`/trips/${t.status}/${t.number}`} key={t.number}>
-            <img src={t.img} alt='trip' style={styles.img} />
-          </Link>
-        ))
-      }
-    </div>
+    <TripRow trips={TripAPI.getMostRecent()} />
     <h2 style={styles.heading}>Upcoming Trips</h2>
-    <div style={styles.row}>
-      {
-        TripAPI.getMostRecentFuture().map(t => (
-          <Link to={`/trips/${t.status}/${t.number}`} key={t.number}>
-            <img src={t.img} alt='trip' style={styles.img} />
-          </Link>
-        ))
-      }
-    </div>
+    <TripRow trips={TripAPI.getMostRecentFuture()} />
   </div>
 );
 
@@ -49,15 +34,6 @@ const styles = {
     borderBottom: '1px solid #fff',
     color: '#fff'
   },
-  row: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around'
-  },
-  img: {
-    width: '200px',
-    height: '150px'
-  }
-}
+};
 
 export default TripsModule;
