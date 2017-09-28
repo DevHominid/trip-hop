@@ -8,7 +8,7 @@ Prototype full-stack outdoor adventure journaling app. Plan on featuring MongoDB
 
 This project is currently in progress.
 
-Development is underway on the front-end, with a fake JSON API service being used until development begins on the back-end.
+Development is underway on the front-end, with a fake API service being used until development begins on the back-end.
 
 ## Getting started
 
